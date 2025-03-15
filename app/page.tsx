@@ -2,8 +2,7 @@
 "use client";
 // pages/index.tsx
 import { useState, useEffect } from 'react';
-import axios from 'axios';
-import OpenAI from "openai";
+
 
 
 const locales = [
@@ -149,14 +148,16 @@ export default function Home() {
         </button>
 
         <div className="mt-4">
-        <h2 className="text-lg font-semibold" style={{ color: 'black' }}>Extracted Tickers:</h2>
+        <h2 className="text-lg font-semibold" style={{ color: 'black' }}>Extracted:</h2>
           {tickers.length > 0 && exchange ? (
             <>
+            <div style={{ color: 'black' , fontSize: '18px' }}>Tickers:</div>
               { <ul className="list-disc list-inside mt-2" style={{ color: 'black' }}>
               {tickers.map((str, val) => (
                     <li key = {val}>{str}</li>
                 ))}
               </ul> }
+              <div style={{ color: 'black' , fontSize: '18px' }}>exchange:</div>
               <ul className="list-disc list-inside mt-2" style={{ color: 'black' }}>
                 {exchange}
               </ul>
